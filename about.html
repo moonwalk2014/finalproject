@@ -1,0 +1,161 @@
+<!doctype html> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="owl-carousel/owl.carousel.css">
+ <link rel="stylesheet" type="text/css" href="owl-carousel/owl.theme.css">
+ <link rel="stylesheet" type="text/css" href="style.css">
+ 
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+ 
+ 
+<title>Business website</title>
+</head>
+
+<body>
+
+  <div class="facebook">
+<a href="www.facebook.com"><img src="img/facebook.png" width="100" height="100"></a>
+<a href="www.twitter.com"><img src="img/twitter.png" width="100" height="100"> </a>  
+<a href="www.googleplus.com"><img src="img/gplus.png" width="100" height="100"> </a>
+  </div>
+
+<div class="line">
+  <center>
+         <div id="owl-demo" class=" owl-theme  margin-bottm">
+          <img src="img/1.jpg" width="940" height="380" alt="">
+               <img src="img/2.jpg" width="940" height="380" alt="">
+               <img src="img/3.jpg" width="940" height="380" alt="">
+        </div>
+        </center>
+      </div>
+  <header>
+     <nav class="top-nav">
+     <ul>
+                 <center>    
+                  
+                    <li><a href="index.html">Home</a></li>
+                     <li>
+             <a href="product.html">Product</a>          
+                        </li>
+                     <li>
+                      <a onclick="div_show()">Contact</a>
+                    </li>
+                    <li>
+                      <a href="about.html">About Us</a>
+                    </li>
+                     </center>
+                  </ul> 
+      </nav>
+  </header>
+<div class="container">
+  <div class="paragraph">
+   this is a small web store that you can buy online all kind of computers
+
+</div>
+  <div id="map-canvas">
+   
+</div>
+
+</div>
+<footer>
+   <div class="text">Copyright © 2015 </div>
+</footer>
+<div id="wrap">
+<img class="bgfade" src="1.jpg">
+<img class="bgfade" src="2.jpg">
+
+</div>
+
+<div id="wrapper">
+    <div id="contact_form">
+    <form name="form1" id="ff" method="post" action="">
+   
+        <label>
+        <span>Name*:</span>
+        <input type="text" placeholder="Please enter your name" name="name" id="name" required autofocus>
+        </label>
+ 
+        <label>
+        <span><span class="z5s070" id="z5s070_5" style="height: 11px;">City</span>*:</span>
+        <input type="text" placeholder="Please enter your city" name="city" id="city" required>
+        </label>
+ 
+        <label>
+        <span><span class="z5s070" id="z5s070_4" style="height: 11px;">Phone</span>:</span>
+        <input type="tel" placeholder="Please enter your phone" name="phone" id="phone">
+        </label>
+ 
+        <label>
+        <span>Email*:</span>
+        <input type="email" placeholder="youremail@gmail.com" name="email" id="email" required>
+        </label>
+ 
+        <input class="sendButton" type="submit" name="Submit" value="Send">
+ 
+    </form>
+    </div>
+   </div>
+<script type="text/javascript" src="jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript">
+$(window).load(function(){
+$('img.bgfade').hide();
+var dg_H = $(window).height();
+var dg_W = $(window).width();
+$('#wrap').css({'height':dg_H,'width':dg_W});
+function anim() {
+    $("#wrap img.bgfade").first().appendTo('#wrap').fadeOut(1500);
+    $("#wrap img").first().fadeIn(1500);
+    setTimeout(anim, 3000);
+}
+anim();})
+$(window).resize(function(){window.location.href=window.location.href})</script>
+ <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>  
+      <script type="text/javascript">
+         jQuery(document).ready(function($) {   
+           $("#owl-demo").owlCarousel({   
+          navigation : true,
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          autoPlay : true,
+          singleItem:true
+           });
+           
+         }); 
+
+//Function To Display Popup
+function div_show() {
+document.getElementById('wrapper').style.display = "block";
+}
+//Function to Hide Popup
+function div_hide(){
+document.getElementById('wrapper').style.display = "none";
+}		 
+		 
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+      function initialize() {
+       var myLatlng = new google.maps.LatLng(40.708012, -74.006387);
+       
+  var mapOptions = {
+    zoom: 20,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '90 john street'
+  });
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+</body>
+</html>
